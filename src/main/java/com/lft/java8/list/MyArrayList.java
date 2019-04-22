@@ -66,6 +66,11 @@ public class MyArrayList<T> implements List<T> {
         return true;
     }
 
+    /**
+     * 线性时间O(n)
+     * @param o
+     * @return
+     */
     @Override
     public boolean remove(Object o) {
         if (!contains(o)) {
@@ -107,10 +112,11 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean removeAll(Collection<?> c) {
+        boolean b = true;
         for (Object o : c) {
-            remove(o);
+            b &= remove(o);
         }
-        return true;
+        return b;
     }
 
     @Override
@@ -150,6 +156,11 @@ public class MyArrayList<T> implements List<T> {
         return old;
     }
 
+    /**
+     * 线性时间O(n)
+     * @param index
+     * @param element
+     */
     @Override
     public void add(int index, T element) {
         //增加
@@ -163,12 +174,24 @@ public class MyArrayList<T> implements List<T> {
         array[index] = element;
     }
 
+    /**
+     * 线性时间O(n)
+     * @param index
+     * @return
+     */
     @Override
     public T remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-        T t = array[index];
+//        if (index < 0 || index >= size) {
+//            throw new IndexOutOfBoundsException();
+//        }
+//        T t = array[index];
+//        for (int j = index; j < size - 1; j++) {
+//            array[j] = array[j + 1];
+//        }
+//        array[size - 1] = null;
+//        size--;
+//        return t;
+        T t = get(index);
         for (int j = index; j < size - 1; j++) {
             array[j] = array[j + 1];
         }
