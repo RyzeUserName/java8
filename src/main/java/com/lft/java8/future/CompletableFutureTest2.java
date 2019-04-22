@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
  * @author Ryze
  * @date 2019-04-19 14:38
  */
+@SuppressWarnings("all")
 public class CompletableFutureTest2 {
     private static List<Shop> shops = Arrays.asList(
         new Shop("banana"),

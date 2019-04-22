@@ -1,5 +1,7 @@
 package com.lft.java8.future;
 
+import java.util.Random;
+
 /**
  * 折扣
  * @author Ryze
@@ -30,10 +32,12 @@ public class Discount {
         deplay();
         return price * (100 - disCode.getPercentage()) / 100;
     }
-
+    private static final Random RANDOM = new Random();
     private static void deplay() {
         try {
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
+            //模拟延迟 0.5 -2.5
+            Thread.sleep(RANDOM.nextInt(2000) + 500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

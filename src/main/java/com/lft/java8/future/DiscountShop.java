@@ -27,9 +27,13 @@ public class DiscountShop {
     }
 
 
-    private void deplay() {
+    private static final Random RANDOM = new Random();
+
+    private static void deplay() {
         try {
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
+            //模拟延迟 0.5 -2.5
+            Thread.sleep(RANDOM.nextInt(2000) + 500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

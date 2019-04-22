@@ -20,7 +20,6 @@ public class CompletableFutureTest4 {
         b2();
         long l2 = System.currentTimeMillis();
         long l3 = System.currentTimeMillis();
-        //List<String> strawberry3 = findPrices3("strawberry");
         long l4 = System.currentTimeMillis();
         System.out.println("------ time :" + (l1 - l));
         System.out.println("------ time :" + (l2 - l1));
@@ -35,10 +34,13 @@ public class CompletableFutureTest4 {
     }
 
     static Future<Integer> b2() {
+        // 相对于 thenCombine() 而言 thenCompose() 有先后顺序
+        // thenCombine() 没有先后顺序
         return CompletableFuture.supplyAsync(() -> do1())
             .thenCombine(
                 CompletableFuture.supplyAsync(() -> do2()), (integer, integer2) -> integer + integer2);
     }
+
     static CompletableFuture<Integer> b3() {
         return CompletableFuture.supplyAsync(() -> do1())
             .thenCombine(
@@ -52,7 +54,7 @@ public class CompletableFutureTest4 {
 
     static Integer do2() {
         deplay();
-        return 1;
+        return 2;
     }
 
     private static void deplay() {
