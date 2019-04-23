@@ -3,7 +3,10 @@ package com.lft.java8.list;
 import java.util.*;
 
 /**
- * @author ryze
+ * arrayLit 实现
+ * @author Ryze
+ * @date 2019-04-23 14:00:17
+ * @version V1.0.0
  */
 public class MyArrayList<T> implements List<T> {
     private T[] array;

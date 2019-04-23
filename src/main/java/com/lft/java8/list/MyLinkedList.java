@@ -3,7 +3,7 @@ package com.lft.java8.list;
 import java.util.*;
 
 /**
- * 描述
+ * LinkedList
  * @author Ryze
  * @date 2019-04-22 11:35
  */
