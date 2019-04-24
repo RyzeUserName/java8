@@ -21,7 +21,7 @@ public class Reptile {
     public static void main(String[] args) throws IOException {
         //test1();
         //test2();
-        test3();
+        //test3();
     }
 
     /**
@@ -62,7 +62,7 @@ public class Reptile {
     }
 
     /**
-     * DFS 深度优化搜索
+     * DFS 深度优化搜索  迭代
      * 从第一个节点开始遍历，子节点遍历，直到没有子节点，开始回溯
      *
      */
