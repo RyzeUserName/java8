@@ -22,10 +22,21 @@ public class WikiFetcher {
 
     public Elements fetchWikipedia(String url) throws IOException {
         sleepIfNeeded();
-        Connection conn = Jsoup.connect(url);
+        Connection conn = Jsoup.connect(url).timeout(5000);
         Document doc = conn.get();
         Element content = doc.getElementById("pane-news");
         Elements paras = content.select("a");
+//        Element content = doc.getElementById("mw-content-text");
+//        Elements paras = content.select("p");
+        return paras;
+    }
+
+    public Elements fetchWikipedia1(String url) throws IOException {
+        sleepIfNeeded();
+        Connection conn = Jsoup.connect(url);
+        Document doc = conn.get();
+        Element content = doc.getElementById("mw-content-text");
+        Elements paras = content.select("p");
         return paras;
     }
 
@@ -58,9 +69,10 @@ public class WikiFetcher {
     public static void main(String[] args) throws IOException {
         WikiFetcher wf = new WikiFetcher();
         String url = "https://news.baidu.com";
-        Elements paragraphs = wf.readWikipedia(url);
+        //String url = "https://zh.wikipedia.org/wiki/Java_(programming_language)";
+        Elements paragraphs = wf.fetchWikipedia(url);
         for (Element paragraph : paragraphs) {
-            System.out.println(paragraph);
+            System.out.println(paragraph.attr("href") + paragraph.text());
         }
     }
 
