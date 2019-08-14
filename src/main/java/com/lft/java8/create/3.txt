@@ -1,0 +1,18 @@
+Classfile /E:/study/java8/src/main/java/com/lft/java8/create/F.class
+  Last modified 2019-8-14; size 104 bytes
+  MD5 checksum ef5af99ccf697fd86a5f35bc2b878dd6
+  Compiled from "F.java"
+public interface com.lft.java8.create.F
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+Constant pool:
+  #1 = Class              #5              // com/lft/java8/create/F
+  #2 = Class              #6              // java/lang/Object
+  #3 = Utf8               SourceFile
+  #4 = Utf8               F.java
+  #5 = Utf8               com/lft/java8/create/F
+  #6 = Utf8               java/lang/Object
+{
+}
+SourceFile: "F.java"

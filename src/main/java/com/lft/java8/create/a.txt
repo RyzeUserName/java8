@@ -1,0 +1,2 @@
+javac xxx.java
+javap -c -v xxx.class >cccc.txt
