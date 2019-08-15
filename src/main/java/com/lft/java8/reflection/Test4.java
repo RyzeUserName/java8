@@ -7,7 +7,7 @@ package com.lft.java8.reflection;
  */
 public class Test4 {
     public static void main(String[] args) {
-        A<String> stringA = new A<>();
-        stringA.say("sss");
+////        A<String> stringA = new A<>();
+//        stringA.say("sss");
     }
 }
