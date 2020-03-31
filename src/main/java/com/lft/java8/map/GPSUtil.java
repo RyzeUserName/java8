@@ -142,7 +142,23 @@ public class GPSUtil {
     }
 
     public static void main(String[] args) {
-        double[] doubles = gps84_To_Gcj02(40.066116, 116.275627);
-        System.out.println(doubles[0]+","+doubles[1]);
+        //		  116.478928,39.997761,
+        //         116.478907,39.998422,
+        //         116.479384,39.998546,
+        //         116.481053,39.998204,
+        //         116.481793,39.997868,
+        //         116.482898,39.998217
+        double[] doubles = gcj02_To_Gps84(39.997761, 116.478928);
+        double[] doubles1 = gcj02_To_Gps84(39.998422, 116.478907);
+        double[] doubles2 = gcj02_To_Gps84(39.998546, 116.479384);
+        double[] doubles3 = gcj02_To_Gps84(39.998204, 116.481053);
+        double[] doubles4 = gcj02_To_Gps84(39.997868, 116.481793);
+        double[] doubles5 = gcj02_To_Gps84(39.998217, 116.482898);
+        System.out.println(doubles[0] + "," + doubles[1]);
+        System.out.println(doubles1[0] + "," + doubles1[1]);
+        System.out.println(doubles2[0] + "," + doubles2[1]);
+        System.out.println(doubles3[0] + "," + doubles2[1]);
+        System.out.println(doubles4[0] + "," + doubles2[1]);
+        System.out.println(doubles5[0] + "," + doubles2[1]);
     }
 }
