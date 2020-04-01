@@ -17,19 +17,78 @@ package com.lft.java8.leetcode;
  */
 public class Test13 {
     public static void main(String[] args) {
-
+        ListNode listNode1 = new ListNode(3);
+        ListNode listNode2 = new ListNode(5);
+        ListNode listNode3 = new ListNode(8);
+        ListNode listNode4 = new ListNode(5);
+        ListNode listNode5 = new ListNode(10);
+        ListNode listNode6 = new ListNode(2);
+        ListNode listNode7 = new ListNode(1);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
+        listNode5.next = listNode6;
+        listNode6.next = listNode7;
+        print(partition(listNode1, 5));
     }
 
     public static class ListNode {
         int val;
-        Test12.ListNode next;
+        ListNode next;
 
         ListNode(int x) {
             val = x;
         }
     }
 
-    public ListNode partition(ListNode head, int x) {
+    public static ListNode partition(ListNode head, int x) {
+        if (head == null) {
+            return null;
+        }
+        ListNode next = head;
+        ListNode first = null;
+        ListNode firstEnd = null;
+        ListNode lastFirst = null;
+        ListNode lastEnd = null;
+        while (next != null) {
+            int val = next.val;
+            ListNode nextNext = next.next;
+            if (val < x) {
+                next.next = null;
+                if (first == null) {
+                    first = next;
+                    firstEnd = next;
+                } else {
+                    firstEnd.next = next;
+                    firstEnd = next;
+                }
+            } else {
+                next.next = null;
+                if (lastFirst == null) {
+                    lastFirst = next;
+                    lastEnd = next;
+                } else {
+                    lastEnd.next = next;
+                    lastEnd = next;
+                }
+            }
+            next = nextNext;
+        }
+        if (first != null) {
+            firstEnd.next = lastFirst;
+        } else {
+            first = lastFirst;
+        }
+        return first;
 
+    }
+
+
+    public static void print(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + "->");
+            head = head.next;
+        }
     }
 }
