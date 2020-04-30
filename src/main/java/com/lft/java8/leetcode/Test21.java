@@ -31,15 +31,16 @@ import java.util.Stack;
  */
 public class Test21 {
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue();
-        queue.push(1);
-        queue.push(2);
-        queue.push(3);
-        queue.push(4);
-        System.out.println(queue.peek());
-        System.out.println(queue.pop());
-        System.out.println(queue.peek());
-        System.out.println(queue.empty());
+//        MyQueue queue = new MyQueue();
+//        queue.push(1);
+//        queue.push(2);
+//        queue.push(3);
+//        queue.push(4);
+//        System.out.println(queue.peek());
+//        System.out.println(queue.pop());
+//        System.out.println(queue.peek());
+//        System.out.println(queue.empty());
+        System.out.println(" 是就是 就是sssss ".trim().toUpperCase());
     }
 
     static class MyQueue {
